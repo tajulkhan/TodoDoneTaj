@@ -93,6 +93,12 @@ const TodoApp = () => {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Enter a todo..."
+                     onKeyDown={(e) => {
+                      if (e.key === 'Enter' && input.trim() !== "") {
+                        addTodo(input); 
+                        setInput('');
+                      }
+                    }}
                   />
                   <button
                     className="w-20 flex items-center justify-between bg-[#142648] rounded-lg text-white px-3.5 py-2"
