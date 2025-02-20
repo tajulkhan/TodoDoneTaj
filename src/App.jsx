@@ -260,12 +260,17 @@ const Todo = ({
           </div>
 
           <button onClick={() => toggleComplete(index)} className="bg-white p-1 rounded-sm mr-2 cursor-pointer">
-            <img
+           { todo.completed ? ( <img
+              src="/images/undo-ic.svg"
+              width={16}
+              height={16}
+              alt="Done icon"
+            />):( <img
               src="/images/done-ic.svg"
               width={16}
               height={16}
               alt="Done icon"
-            />
+            />)}
           </button>
           <button onClick={() => startEditing(index, todo.text)}  className="bg-white p-1 rounded-sm mr-2 cursor-pointer">
             <img
